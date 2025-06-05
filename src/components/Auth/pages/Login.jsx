@@ -25,7 +25,6 @@ const Login = () => {
       subheading="Don’t have an account?"
       supheading="Log in as :"
       linkText="Sign up"
-      linkTo="/signup"
     >
       <AuthTabs role={role} setRole={setRole} />
       {renderForm()}

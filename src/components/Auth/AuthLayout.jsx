@@ -1,11 +1,12 @@
-import Logo from "../../assets/logo (2).png";
+import { Link } from "react-router-dom";
+import Logo from "../../assets/images/logo (2).png";
+import SIGN_UP from "../../routes/appRoutes";
 const AuthLayout = ({
   children,
   heading,
   subheading,
   supheading,
   linkText,
-  linkTo,
 }) => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#009DDE] p-4 ">
@@ -15,9 +16,9 @@ const AuthLayout = ({
           <h2 className="text-2xl font-bold text-start mb-1">{heading}</h2>
           <p className="text-start text-sm mb-1">
             {subheading} &nbsp;
-            <a href={linkTo} className="text-[#009DDE]">
+            <Link to={"/signup"} className="text-[#009DDE]">
               {linkText}
-            </a>
+            </Link>
           </p>
           <p className="mb-3">{supheading}</p>
         </div>

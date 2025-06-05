@@ -1,19 +1,9 @@
-import SignUp from "./components/Auth/pages/SignUp";
-import Login from "./components/Auth/pages/Login";
-import { useState } from "react";
+import { useRoutes } from "react-router-dom";
+import { APP_ROUTES, AUTH_ROUTES } from "./routes/Routes";
 const App = () => {
-  const [mode, setMode] = useState("signup"); // 'signup' & 'login'
-  return (
-    <div className="">
-      <div className="min-h-screen  flex items-center justify-center bg-[#009DDE]">
-        {mode === "signup" ? (
-          <SignUp toggleMode={() => setMode("login")} />
-        ) : (
-          <Login toggleMode={() => setMode("signup")} />
-        )}
-      </div>
-    </div>
-  );
+  const isLoggedIn = true;
+  const routing = useRoutes(isLoggedIn ? APP_ROUTES : AUTH_ROUTES);
+  return routing;
 };
 
 export default App;
